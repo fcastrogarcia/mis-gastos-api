@@ -1,14 +1,13 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
-const resolvers = require("./resolvers");
+const schema = require("./schema");
 const port = process.env.PORT;
 
 const app = express();
 const path = "/api";
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
 });
 
 // app.use("*", jwtCheck, requireAuth, checkScope);
