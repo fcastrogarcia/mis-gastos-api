@@ -5,7 +5,9 @@ const typeDefs = gql`
     id: ID!
     name: String!
     email: String!
-    age: Int
+    profilePicture: String!
+    payments: [Payment!]!
+    expenses: [Expense!]!
   }
 `;
 
