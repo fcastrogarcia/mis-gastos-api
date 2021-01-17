@@ -7,6 +7,8 @@ const typeDefs = gql`
     comments: [Comment!]!
     me: User!
     post: Post!
+    expenseTest: String
+    paymentTest: String
   }
 
   type Mutation {
@@ -95,4 +97,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDefs;
+module.exports = { typeDefs };

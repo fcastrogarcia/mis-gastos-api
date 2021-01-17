@@ -1,7 +1,6 @@
 const { makeExecutableSchema } = require("apollo-server-express");
-const schema = require("./schema");
+const { reduceSchemas } = require("../utils");
 
-module.exports = makeExecutableSchema({
-  typeDefs: [schema],
-  resolvers: {},
-});
+const schema = reduceSchemas(__dirname);
+
+module.exports = makeExecutableSchema(schema);
