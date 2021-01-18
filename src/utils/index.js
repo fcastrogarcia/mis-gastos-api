@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const merge = require("merge-deep");
 
-const accumulator = { typeDefs: [], resolvers: {} };
+const initialSchema = { typeDefs: [], resolvers: {} };
 
 const isValidTypes = types => {
   return Object.keys(types).length ? [types] : [];
@@ -16,7 +16,7 @@ const reduceSchemas = __dirname => {
       typeDefs: [...acc.typeDefs, ...isValidTypes(typeDefs)],
       resolvers: merge(acc.resolvers, resolvers),
     };
-  }, accumulator);
+  }, initialSchema);
 };
 
 module.exports = {

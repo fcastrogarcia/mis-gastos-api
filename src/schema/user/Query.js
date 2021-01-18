@@ -1,5 +1,5 @@
 const Query = {
-  me: (parent, args, ctx, info) => {
+  me: (parent, args, { db }, info) => {
     return {
       id: 23423,
       name: "carlitos",
